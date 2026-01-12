@@ -1,0 +1,146 @@
+{
+    "$type" : "addSlot",
+    "data" : {
+        "id" : "ymn_1",
+        "parent" : {
+            "$type" : "reference",
+            "targetId" : "Root"
+        },
+        "name" : {
+            "$type" : "string",
+            "value" : "YMN_Box"
+        },
+        "position" : {
+            "$type" : "float3",
+            "value" : {
+                "x" : 0,
+                "y" : 1.5,
+                "z" : 10
+            }
+        }
+    }
+}
+
+
+
+{
+    "$type" : "addComponent",
+    "containerSlotId" : "ymn_1",
+    "data" : {
+        "id" : "ymn_2",
+        "componentType" : "[FrooxEngine]FrooxEngine.BoxMesh"
+    }
+}
+
+{
+    "$type" : "addComponent",
+    "containerSlotId" : "ymn_1",
+    "data" : {
+        "id" : "ymn_3",
+        "componentType" : "[FrooxEngine]FrooxEngine.PBS_Metallic"
+    }
+}
+
+
+
+
+{
+    "$type" : "addComponent",
+    "containerSlotId" : "ymn_1",
+    "data" : {
+        "id" : "ymn_4",
+        "componentType" : "[FrooxEngine]FrooxEngine.MeshRenderer",
+        "members": {
+            "Mesh": {
+                "$type": "reference",
+                "targetId": "ymn_2"
+            },
+        }
+    }
+}
+
+
+
+
+{
+    "$type" : "updateComponent",
+    "data" : {
+        "id" : "ymn_4",
+        "members" : {
+            "Materials": {
+                "$type": "list",
+                "elements": [
+                    {
+                        "$type": "reference",
+                        "targetId": "ymn_3"
+                    }
+                ]
+            }
+        }
+    }
+}
+
+
+
+{
+                "componentType": "FrooxEngine.MeshRenderer",
+                "members": {
+                    "persistent": {
+                        "$type": "bool",
+                        "value": true,
+                        "id": "Reso_134"
+                    },
+                    "UpdateOrder": {
+                        "$type": "int",
+                        "value": 0,
+                        "id": "Reso_135"
+                    },
+                    "Enabled": {
+                        "$type": "bool",
+                        "value": true,
+                        "id": "Reso_136"
+                    },
+                    "Mesh": {
+                        "$type": "reference",
+                        "targetId": "ymn_2",
+                        "targetType": "FrooxEngine.IAssetProvider\u003CFrooxEngine.Mesh\u003E",
+                        "id": "Reso_137"
+                    },
+                    "Materials": {
+                        "$type": "list",
+                        "elements": [
+                            {
+                                "$type": "reference",
+                                "targetId": "ymn_3",
+                                "targetType": "FrooxEngine.IAssetProvider\u003CFrooxEngine.Material\u003E",
+                                "id": "Reso_138"
+                            }
+                        ],
+                        "id": "Reso_139"
+                    },
+                    "MaterialPropertyBlocks": {
+                        "$type": "list",
+                        "elements": [],
+                        "id": "Reso_13A"
+                    },
+                    "ShadowCastMode": {
+                        "$type": "enum",
+                        "value": "On",
+                        "enumType": "ShadowCastMode",
+                        "id": "Reso_13B"
+                    },
+                    "MotionVectorMode": {
+                        "$type": "enum",
+                        "value": "Object",
+                        "enumType": "MotionVectorMode",
+                        "id": "Reso_13C"
+                    },
+                    "SortingOrder": {
+                        "$type": "int",
+                        "value": 0,
+                        "id": "Reso_13D"
+                    }
+                },
+                "id": "ymn_4",
+                "isReferenceOnly": false
+            }
